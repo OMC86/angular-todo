@@ -13,6 +13,10 @@ angular.module('TodoApp', ['ngRoute', 'RouteControllers', 'UserService', 'angula
         templateUrl: 'templates/login.html',
         controller: 'LoginController'
     })
+    .when('/logout', {
+        templateUrl: 'templates/logout.html',
+        controller: 'LogoutController'
+    })
     .when('/todo', {
         templateUrl: 'templates/todo.html',
         controller: 'TodoController'

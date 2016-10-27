@@ -8,7 +8,7 @@ angular.module('RouteControllers', [])
         $scope.username = store.remove('username');
         
 
-        logOutAPIService.logOut(url + 'accounts/api-token-auth/' + $scope.authToken + $scope.username)
+        logOutAPIService.logout(url + 'accounts/api-token-auth/' + $scope.authToken + $scope.username)
     })
 
 
