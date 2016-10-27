@@ -6,6 +6,7 @@ angular.module('UserService', [])
                 return $http.post(url, data)
             }
         }
+        
         return UserAPIService;
     });
 
@@ -34,3 +35,11 @@ angular.module('TodoService',[])
         return TodoAPIService;
     });
 
+angular.module('LogOutService', [])
+    .factory('logOutAPIService', function($http) {
+        logOutAPIService = {
+            logout: function(url, data, token) {
+                return $http.put(url, data, header);
+            }
+        }
+    });
