@@ -10,7 +10,7 @@ angular.module('TodoApp', ['ngRoute', 'angular-storage', 'UserService', 'TodoSer
         controller: 'RegisterController'
     })
     .when('/login', {
-        templateUrl: 'templates/login.html',
+        templateUrl: 'templates/home.html',
         controller: 'LoginController'
     })
     .when('/logout', {

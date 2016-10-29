@@ -1,6 +1,6 @@
 angular.module('TodoApp')
     
-   .controller('LoginController', function($scope, UserAPIService, store) {
+    .controller('LoginController', function($scope, $location, UserAPIService, store) {
  
         $scope.registrationUser = {};
         var url = "https://morning-castle-91468.herokuapp.com/";
@@ -13,7 +13,8 @@ angular.module('TodoApp')
                 UserAPIService.callAPI(url + "accounts/register/", $scope.registrationUser).then(function(results) {
                     $scope.data = results.data;
                     if ($scope.data.username == $scope.registrationUser.username && $scope.data.password == $scope.registrationUser.password){
-                        alert("You have successfully registered to Angular Todo");
+                        alert("You have successfully logged in to Angular Todo");
+                        
  
                         UserAPIService.callAPI(url + "accounts/api-token-auth/", $scope.data).then(function(results) {
                             $scope.token = results.data.token;
@@ -22,10 +23,10 @@ angular.module('TodoApp')
                         }).catch(function(err) {
                             console.log(err);
                         });
-                    }
+                    };
                 }).catch(function(err) {
                     console.log(err)
                 });
             }
         }
-    });
+    })

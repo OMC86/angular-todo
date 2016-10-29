@@ -2,9 +2,9 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-6">
-                <form name="loginForm" ng-submit="login()" novalidate>
+                <form name="loginForm" ng-submit="submitForm()" novalidate>
                     <div class="form-group">
-                        <label>Username</label>
+                        <h1>Login</h1><label>Username</label>
                         <input type="text" name="name" class="form-control" ng-model="user.username" required>
                         <p ng-show="loginForm.name.$pristine" class="help-block">Your username is required</p>
                     </div>
