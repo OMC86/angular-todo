@@ -1,4 +1,4 @@
-angular.module('RouteControllers', [])
+angular.module('TodoApp')
     
 
     .controller('LogOutController', function($scope, $location, logOutAPIService, store) {
@@ -14,9 +14,9 @@ angular.module('RouteControllers', [])
         	$scope.username = store.remove('username');
         }.catch(function(err) {
         	console.log(err)
-        })
-    });
-}
+        }))
+    }
+})
     
     
 

@@ -1,4 +1,4 @@
-angular.module('TodoApp', ['ngRoute', 'RouteControllers', 'UserService', 'angular-storage', 'TodoService', 'TodoDirective', 'LogOutService'])
+angular.module('TodoApp', ['ngRoute', 'angular-storage', 'UserService', 'TodoService'])
 .config(function($routeProvider) {
  
     $routeProvider.when('/', {

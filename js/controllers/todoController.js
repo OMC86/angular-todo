@@ -1,4 +1,4 @@
-angular.module('RouteControllers', [])
+angular.module('TodoApp')
 
 .controller('TodoController', function($scope, $location, TodoAPIService, store) {
         var url = "https://morning-castle-91468.herokuapp.com/";

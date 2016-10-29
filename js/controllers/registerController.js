@@ -1,4 +1,4 @@
-angular.module('RouteControllers', [])
+angular.module('TodoApp')
     
    .controller('RegisterController', function($scope, UserAPIService, store) {
  
