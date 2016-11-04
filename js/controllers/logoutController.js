@@ -1,21 +1,20 @@
 angular.module('TodoApp')
     
 
-    .controller('LogOutController', function($scope, $location, logOutAPIService, store) {
-        var url = 'https://morning-castle-91468.herokuapp.com/';
+    .controller('LogoutController', function($scope, $location, $window, store) {
 
-        $scope.logoutMessage = "Do you really want to log out?"
+        $scope.logoutMessage = "Do you really want to log out?";
+
        
-        $scope.logout = function() {        
+        $scope.logout = function() {   
+            $scope.authToken = store.remove('authToken');
+            $scope.username = store.remove('username');   
+            $location.path("/");  
+            $window.location.reload();
 
-        logOutAPIService.logout(url + 'accounts/api-token-auth/', $scope.username, store.get('authToken')).then(function(results) {
-    
-        	$scope.authToken = store.remove('authToken');
-        	$scope.username = store.remove('username');
-        }.catch(function(err) {
-        	console.log(err)
-        }))
+
     }
+    	
 })
     
     

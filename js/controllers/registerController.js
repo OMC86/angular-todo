@@ -1,10 +1,17 @@
 angular.module('TodoApp')
     
-   .controller('RegisterController', function($scope, $location, UserAPIService, store) {
+   .controller('RegisterController', function($scope, $location, $window, UserAPIService, store) {
  
+        
+
         $scope.registrationUser = {};
         var url = "https://morning-castle-91468.herokuapp.com/";
- 
+        var username = store.get("username");
+        if(username){
+            $location.path("/todo");
+        } 
+
+
         $scope.submitForm = function() {
             if ($scope.registrationForm.$valid) {
                 $scope.registrationUser.username = $scope.user.username;
@@ -20,7 +27,8 @@ angular.module('TodoApp')
                             $scope.token = results.data.token;
                             store.set('username', $scope.registrationUser.username);
                             store.set('authToken', $scope.token);
-                            $location.path("/")
+                            $location.path("/todo");
+                            $window.location.reload();
                         }).catch(function(err) {
                             console.log(err);
                         });
