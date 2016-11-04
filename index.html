@@ -20,26 +20,27 @@
             <div class="navbar-header">
                 <a class="navbar-brand" href="#/">Angular Todo</a>
             </div>
-            <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav navbar-right" ng-controller='LoginController' ng-cloak>
                 <li><a href="#/">Home</a></li>
                 <li><a href="#/todo">Todo</a></li>
-                <li><a href="#/accounts/register">Account</a></li>
-                <li><a href="#/login">Login</a></li>
-                <li><a href="#/logout">Logout</a></li>
+                <li ng-hide='loggedin()'><a href="#/accounts/register">Register</a></li>
+                <li><a href="#/login">{{Login}}</a></li>
+                <li ng-show="loggedin()"><a href="#/logout">Logout</a></li>
             </ul>
         </div>
     </nav>
+
     <div ng-view>
  
     </div>
 <script src='js/app.js'></script>
+<script src='js/service.js'></script>
 <script src='js/controllers/logoutController.js'></script>
 <script src='js/controllers/loginController.js'></script>
 <script src='js/controllers/editTodoController.js'></script>
 <script src='js/controllers/homeController.js'></script>
 <script src='js/controllers/registerController.js'></script>
 <script src='js/controllers/todoController.js'></script>
-<script src='js/service.js'></script>
 <script src='js/directive.js'></script>
 </body>
 </html>
